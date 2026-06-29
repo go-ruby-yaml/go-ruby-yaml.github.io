@@ -1,0 +1,31 @@
+baseURL = "https://go-ruby-yaml.github.io/"
+title = "go-ruby-yaml"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[params.phases]]
+  name = "Scanner & parser"
+  status = "ready"
+  blurb = "A YAML 1.1 scanner and parser following Psych's event model — documents, mappings, sequences, scalars in plain / single / double / literal / folded styles, and the directive and document markers."
+[[params.phases]]
+  name = "Dump emitter"
+  status = "ready"
+  blurb = "`Dump(v)` emits Psych-compatible YAML: block style by default with flow where Psych uses it, correct scalar quoting, and stable key ordering — matching reference Ruby's output byte-for-byte."
+[[params.phases]]
+  name = "Load & SafeLoad"
+  status = "ready"
+  blurb = "`Load(s)` builds the full Ruby value graph; `SafeLoad` restricts to the safe scalar/collection subset, refusing arbitrary `!ruby/object:` instantiation exactly as Psych's safe loader does."
+[[params.phases]]
+  name = "Anchors, aliases & Ruby tags"
+  status = "ready"
+  blurb = "Anchors `&a` and aliases `*a` for shared and cyclic structure, plus the `!ruby/object:`, `!ruby/symbol`, `!ruby/range` and related tags round-tripped the way Psych writes and reads them."
+[[params.phases]]
+  name = "Ruby scalar types"
+  status = "ready"
+  blurb = "`Symbol`, `Time`, `Range` and arbitrary-precision bignum scalars emitted and parsed with Psych's tag and formatting conventions."
+[[params.phases]]
+  name = "Differential oracle & coverage"
+  status = "ready"
+  blurb = "A wide value corpus dumped and loaded both here and by the system `ruby`/Psych, compared byte-for-byte; 100% coverage, gofmt + go vet clean, green across all six 64-bit Go arches and three OSes."
