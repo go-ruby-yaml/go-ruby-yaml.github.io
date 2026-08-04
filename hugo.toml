@@ -26,6 +26,10 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   status = "ready"
   blurb = "`Symbol`, `Time`, `Range` and arbitrary-precision bignum scalars emitted and parsed with Psych's tag and formatting conventions."
 [[params.phases]]
+  name = "yaml-test-suite conformant"
+  status = "ready"
+  blurb = "The loader passes the full [yaml-test-suite](https://github.com/yaml/yaml-test-suite) accept/reject axis — **402 / 402**: **308 / 308** well-formed documents load and **94 / 94** ill-formed inputs are rejected (0 panics, 0 known gaps). Every case runs on every lane, held by a regression ratchet."
+[[params.phases]]
   name = "Differential oracle & coverage"
   status = "ready"
   blurb = "A wide value corpus dumped and loaded both here and by the system `ruby`/Psych, compared byte-for-byte; 100% coverage, gofmt + go vet clean, green across all six 64-bit Go arches and three OSes."
